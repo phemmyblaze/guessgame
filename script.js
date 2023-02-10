@@ -1,6 +1,7 @@
 'use strict';
 const secretNumber = Math.trunc(Math.random() * 20 + 1);
 let score = 20;
+let highscore = 0;
 
 
 
@@ -17,7 +18,14 @@ document.querySelector('.check').addEventListener('click', function(e) {
         document.querySelector('.number').textContent = secretNumber;
         document.querySelector('body').style.backgroundColor = '#60b347';
         document.querySelector('.number').style.width = '30rem';
-        // document.querySelector('body').style.color = '';
+
+      if (score > highscore) {
+        highscore = score;
+        
+        document.querySelector('.highscore').textContent = highscore;
+        
+        
+      }
         
         ////TESTING IF THE NUMBER IS TOO HIGH
 
@@ -53,6 +61,7 @@ document.querySelector('.check').addEventListener('click', function(e) {
 
 
 
+//////THIS IS TO RESET THE GAME ALL OVER AGAIN
 
 document.querySelector('.again').addEventListener('click', function(e){
     score = 20;
@@ -64,3 +73,32 @@ document.querySelector('.again').addEventListener('click', function(e){
     document.querySelector('body').style.backgroundColor = '#222';
     document.querySelector('.number').style.width = '15rem';
 })
+
+
+/////TO IMPLEMENT THE HIGH SCORE
+
+
+
+
+/*
+class profile {
+    constructor(name, age, gender) {    
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+
+        // return (name, age, gender);
+
+    }
+
+    getProfile = function() {
+        return `My name is ${this.name} and am I ${this.age} years old, am a ${this.gender}`
+    }
+}
+
+let profile2 = new profile('John', 20, 'male');
+console.log(profile2.getProfile());
+
+let profile3 = new profile('Jenifer', 20, 'female');
+console.log(profile3.getProfile());
+*/
