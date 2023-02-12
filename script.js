@@ -75,10 +75,6 @@ document.querySelector('.again').addEventListener('click', function(e){
 })
 
 
-/////TO IMPLEMENT THE HIGH SCORE
-
-
-
 
 /*
 class profile {
@@ -102,3 +98,48 @@ console.log(profile2.getProfile());
 let profile3 = new profile('Jenifer', 20, 'female');
 console.log(profile3.getProfile());
 */
+
+// class person {
+//     constructor(name, birthYear, gender) {
+//         this.name = name;
+//         this.birthYear = birthYear;
+//         this.gender = gender;
+//     }
+//     calcAge(){
+//         console.log(new Date().getFullYear()-this.birthYear);
+//     }
+// }
+
+// person.prototype.greet = function(){
+//     console.log(`Good afternoon ${this.name}`)
+// }
+// let john = new person('john', 1997, 'male');
+// console.log(john)
+// john.greet();
+// john.calcAge();
+
+
+class B{
+    constructor(age) {
+        this.age = age;
+    }
+}
+
+class Test extends B {
+    constructor(name, age){
+        super(age)
+        this.name = name;
+    }
+
+
+    hello(){
+        console.log(`Hello ${this.name} who is ${this.age}`);
+    }
+    
+}
+
+let obj = new Test ('Akinbobola', 26)
+obj.hello();
+
+
+
